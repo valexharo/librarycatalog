@@ -5,14 +5,36 @@
 
     <!-- Example General settings -->
     <string name="pref_header_general">General</string>
+    <string name="pref_universidad">Repositorios:</string>
+
+    <string name="pref_ucuenca">Universidad de Cuenca</string>
+    <string name="repo_ucuenca_key">repo_cuenca</string>
+
+    <string name="pref_utpl">Universidad Tecnica Particular de Loja</string>
+    <string name="repo_utpl_key">repo_utpl</string>
+
+    <string name="pref_epn">Escuela Politecnica Nacional</string>
+    <string name="repo_epn_key">repo_epn</string>
+
+    <string name="pref_cedia">CEDIA</string>
+    <string name="repo_cedia_key">repo_cedia</string>
+
+    <string name="pref_cat_search_default">Búsqueda:</string>
+    <string name="pref_search_default">Texto para buscar por default</string>
+    <string name="value_search_default">Historia</string>
+    <string name="search_default_key">search_default</string>
+
+
+    <string name="pref_num_results">Número de resultados:</string>
+    <string name="pref_title_display_name">Número máximo de resultados</string>
+    <string name="pref_default_display">20</string>
+    <string name="num_results_key">num_results</string>
+
 
     <string name="pref_title_social_recommendations">Enable social recommendations</string>
     <string name="pref_description_social_recommendations">Recommendations for people to contact
         based on your message history
     </string>
-
-    <string name="pref_title_display_name">Display name</string>
-    <string name="pref_default_display_name">John Smith</string>
 
     <string name="pref_title_add_friends_to_messages">Add friends to messages</string>
     <string-array name="pref_example_list_titles">

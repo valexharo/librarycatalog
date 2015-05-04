@@ -2,20 +2,106 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ucuenca.ucmobile.librarycatalog" >
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
+
+    <supports-screens
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true"
+        android:resizeable="true"
+        android:anyDensity="true"
+        />
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="19" />
+
+    <uses-permission android:name="android.permissions.CAMERA" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESSCOARSELOCATION" />
+    <uses-permission android:name="android.permission.ACCESSFINELOCATION" />
+    <uses-permission android:name="android.permission.ACCESSLOCATIONEXTRACOMMANDS" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.RECEIVESMS" />
+    <uses-permission android:name="android.permission.RECORDAUDIO" />
+    <uses-permission android:name="android.permission.RECORDVIDEO" />
+    <uses-permission android:name="android.permission.MODIFYAUDIOSETTINGS" />
+    <uses-permission android:name="android.permission.READCONTACTS" />
+    <uses-permission android:name="android.permission.WRITECONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <user-permission android:name="android.permission.INTERACT_ACROSS_USERS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <permission android:name="com.ucuenca.ucmobile.librarycatalog.permission.C2D_MESSAGE" android:protectionLevel="signature" />
+    <uses-permission android:name="com.softbuilder.ups.permission.C2D_MESSAGE" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="com.ucuenca.ucmobile.librarycatalog.permission.C2D_MESSAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
+
+        <meta-data android:name="PW_APPID" android:value="DB772-BC3AC" />
+        <meta-data android:name="PW_PROJECT_ID" android:value="A414657998379" />
+
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="com.ucuenca.ucmobile.librarycatalog.MESSAGE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.ucuenca.ucmobile.librarycatalog.MainActivity" />
+        </activity>
+        <activity
+            android:name=".DetailBook"
+            android:label="@string/title_activity_detail_book"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.ucuenca.ucmobile.librarycatalog.MainActivity" />
+        </activity>
+
+        <activity android:name="com.arellomobile.android.push.PushWebview" />
+        <activity android:name="com.arellomobile.android.push.MessageActivity" />
+        <activity android:name="com.arellomobile.android.push.PushHandlerActivity" />
+        <receiver android:name="com.google.android.gcm.GCMBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+                <category android:name="com.ucuenca.ucmobile.librarycatalog" />
+            </intent-filter>
+        </receiver>
+        <service android:name="com.arellomobile.android.push.PushGCMIntentService" />
+        <service android:name="com.arellomobile.android.push.GeoLocationService" />
+        <receiver android:name="com.arellomobile.android.push.AlarmReceiver" />
+
     </application>
+
 
 </manifest>

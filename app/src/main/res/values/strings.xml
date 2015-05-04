@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">LibraryCatalog</string>
     <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Configuraciones</string>
+    <string name="title_home">Configuraciones</string>
+    <string name="title_activity_detail_book">DetailBook</string>
 </resources>
